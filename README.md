@@ -29,7 +29,7 @@ Clone repo and run npm init and answer the prompt
 ## Demo
 ---
 
-[link to video demo](https://drive.google.com/file/d/1GneNgamJdkExYjviDDfqTUM57QBBBEjU/view?usp=sharing)
+[link to video demo](https://drive.google.com/file/d/1XT22qPPlcyQXvYLMxgYDO5mpUz9s2le2/view?usp=sharing)
 
 ## License
 ---
