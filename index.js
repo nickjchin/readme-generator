@@ -6,11 +6,13 @@ const generateREADME = (answers) =>
 
 ## Description
 
+
 ---
 
 ${answers.description}
 
 ## Table of Contents
+
 
 ---
 
@@ -24,25 +26,30 @@ ${answers.description}
 
 ## Installation
 
+
 ---
 ${answers.installation}
 
 ## Usage
+
 
 ---
 ${answers.usage}
 
 ## License
 
+
 ---
-This project is covered the ${answers.license} license
+This project is covered by the ${answers.license} license
 
 ## Contributing
 
+
 ---
-In order to contribute ${answers.contributing}
+${answers.contributing}
 
 ## Tests
+
 
 ---
 To test this project, in the command line run ${answers.tests}
@@ -106,7 +113,7 @@ inquirer
   ])
   .then((answers) => {
     const readmeContent = generateREADME(answers);
-    fs.writeFile("GeneratedREADME.md", readmeContent, (err) =>
+    fs.writeFile("README.md", readmeContent, (err) =>
       err ? console.log(err) : console.log("Successfully created README!")
     );
   });
