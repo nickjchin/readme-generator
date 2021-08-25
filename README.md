@@ -1,13 +1,11 @@
 # README Generator ![License: none](https://img.shields.io/badge/License-none-blue.svg)
 
 ## Description
-
 ---
 
 README Generator uses user's inputs from the commandline to create a README file for the project
 
 ## Table of Contents
-
 ---
 
 - [Installation](#installation)
@@ -19,43 +17,36 @@ README Generator uses user's inputs from the commandline to create a README file
 - [Questions](#questions)
 
 ## Installation
-
 ---
 
 npm install inquirer
 
 ## Usage
-
 ---
 
 Clone repo and run npm init and answer the prompt
 
 ## Demo
-
 ---
 
 [link to video demo](https://drive.google.com/file/d/1GneNgamJdkExYjviDDfqTUM57QBBBEjU/view?usp=sharing)
 
 ## License
-
 ---
 
 This project is covered by the none license
 
 ## Contributing
-
 ---
 
 In order to contribute, fork the repo then request to be a contributor
 
 ## Tests
-
 ---
 
 To test this project, in the command line run node index.js
 
 ## Questions
-
 ---
 
 Github: [nickjchin](https://www.github.com/nickjchin)
