@@ -1,119 +1,72 @@
-const inquirer = require("inquirer");
+// TODO: Include packages needed for this application
 const fs = require("fs");
+const path = require("path");
+const inquirer = require("inquirer");
+const generateMarkdown = require("./utils/generateMarkdown.js");
 
-const generateREADME = (answers) =>
-  `# ${answers.title} ![License: ${answers.license}](https://img.shields.io/badge/License-${answers.license}-blue.svg)
+// TODO: Create an array of questions for user input
+const questions = [
+  {
+    type: "input",
+    name: "title",
+    message: "Please enter your projects's name",
+  },
+  {
+    type: "input",
+    name: "description",
+    message: "Please enter the description",
+  },
+  {
+    type: "input",
+    name: "installation",
+    message: "Please enter the the command to installation dependecies",
+  },
+  {
+    type: "input",
+    name: "usage",
+    message: "Please enter what the user needs to know to use the repo",
+  },
+  {
+    type: "input",
+    name: "contributing",
+    message: "Please enter what the user needs to know about contributing to the repo",
+  },
+  {
+    type: "input",
+    name: "tests",
+    message: "Please enter what command should be ran to run test",
+  },
+  {
+    type: "list",
+    name: "license",
+    message: "Please select what kind of license your project needs",
+    choices: ["MIT", "GNU", "Mozzila", "Apache", "none"],
+  },
+  {
+    type: "input",
+    name: "github",
+    message: "Please enter your github username",
+  },
+  {
+    type: "input",
+    name: "email",
+    message: "Please enter your email",
+  },
+];
 
-## Description
+// TODO: Create a function to write README file
+function writeToFile(fileName, data) {
+  fs.writeFileSync(path.join(process.cwd(), fileName), data, (err) =>
+    err ? console.log(err) : console.log("Successfully created README!")
+  );
+}
 
-
----
-
-${answers.description}
-
-## Table of Contents
-
-
----
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
-- [Contributing](#contributing)
-- [Tests](#tests)
-- [Questions](#questions)
-
-
-## Installation
-
-
----
-${answers.installation}
-
-## Usage
-
-
----
-${answers.usage}
-
-## License
-
-
----
-This project is covered by the ${answers.license} license
-
-## Contributing
-
-
----
-${answers.contributing}
-
-## Tests
-
-
----
-To test this project, in the command line run ${answers.tests}
-
-## Questions
-
----
-Github: [${answers.github}](https://www.github.com/${answers.github})
-
-If you have further questions, please email me at [${answers.email}](mailto:${answers.email})
-`;
-
-inquirer
-  .prompt([
-    {
-      type: "input",
-      name: "title",
-      message: "Please enter your projects's name",
-    },
-    {
-      type: "input",
-      name: "description",
-      message: "Please enter the description",
-    },
-    {
-      type: "input",
-      name: "installation",
-      message: "Please enter the the command to installation dependecies",
-    },
-    {
-      type: "input",
-      name: "usage",
-      message: "Please enter what the user needs to know to use the repo",
-    },
-    {
-      type: "input",
-      name: "contributing",
-      message: "Please enter what the user needs to know about contributing to the repo",
-    },
-    {
-      type: "input",
-      name: "tests",
-      message: "Please enter what command should be ran to run test",
-    },
-    {
-      type: "list",
-      name: "license",
-      message: "Please select what kind of license your project needs",
-      choices: ["MIT", "GNU", "Mozzila", "Apache", "none"],
-    },
-    {
-      type: "input",
-      name: "github",
-      message: "Please enter your github username",
-    },
-    {
-      type: "input",
-      name: "email",
-      message: "Please enter your email",
-    },
-  ])
-  .then((answers) => {
-    const readmeContent = generateREADME(answers);
-    fs.writeFile("SampleREADME.md", readmeContent, (err) =>
-      err ? console.log(err) : console.log("Successfully created README!")
-    );
+// TODO: Create a function to initialize app
+function init() {
+  //function init app and generates readme
+  inquirer.prompt(questions).then((data) => {
+    writeToFile("README.md", generateMarkdown({ ...data }));
   });
+}
+// Function call to initialize app
+init();
