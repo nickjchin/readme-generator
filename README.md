@@ -12,6 +12,7 @@
   
   - [Installation](#installation)
   - [Usage](#usage)
+  - [Demo](#demo)
   - [License](#license)
   - [Contributing](#contributing)
   - [Tests](#tests)
@@ -26,7 +27,12 @@
   ## Usage
   
   ---
-  To use this repo please clone and run npm init, answer the prompts, and install the packages(inquirer)
+  To use this repo please clone and run npm init, answers the prompts, and install the packages(inquirer)
+
+  ## Demo
+
+  ---
+  [Demo](https://drive.google.com/file/d/1HdgibFseJQgjxPdjlDH2fACb0xFvC9QM/view?usp=sharing)
   
   ## License
   
