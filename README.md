@@ -26,7 +26,7 @@
   ## Usage
   
   ---
-  To use this repo please clone and run npm init, answers the prompts, and install the packages(inquirer)
+  To use this repo please clone and run npm init, answer the prompts, and install the packages(inquirer)
   
   ## License
   
@@ -41,7 +41,7 @@
   ## Tests
   
   ---
-  To test this project, in the command line run node index
+  To test this project, in the command line run To test this project, in the command line run node index
   
   ## Questions
   
